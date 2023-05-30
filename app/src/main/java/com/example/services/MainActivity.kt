@@ -1,13 +1,7 @@
 package com.example.services
 
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.annotation.RequiresApi
-import androidx.core.app.NotificationCompat
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.services.databinding.ActivityMainBinding
 
@@ -23,6 +17,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonFirstService.setOnClickListener {
             startService(MyService.newIntent(this, 25))
+            // остановка сервиса в другом месте программы
+            stopService(MyForegroundService.newIntent(this))
         }
 
         binding.foregroundService.setOnClickListener {
