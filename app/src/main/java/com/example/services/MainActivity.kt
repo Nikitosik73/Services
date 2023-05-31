@@ -27,5 +27,15 @@ class MainActivity : AppCompatActivity() {
                 MyForegroundService.newIntent(this)
             )
         }
+
+        binding.intentService.setOnClickListener {
+            // первый способ запуска intentService
+            startService(MyIntentService.newIntent(this))
+            // второй способ запуска intentService
+//            ContextCompat.startForegroundService(
+//                this,
+//                MyIntentService.newIntent(this)
+//            )
+        }
     }
 }
