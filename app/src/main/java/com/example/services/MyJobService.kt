@@ -56,7 +56,7 @@ class MyJobService : JobService() {
 
     companion object {
 
-        const val JOB_ID = 1
+        const val JOB_ID = 2
         private const val PAGE = "page"
 
         fun newIntent(page: Int) = Intent().apply {
